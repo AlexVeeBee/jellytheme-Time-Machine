@@ -1,0 +1,276 @@
+#cssBranding{
+    z-index: 10;
+    transition: transform 200ms ease;
+    position: absolute;
+    top: 64px;
+    left: 24px;
+    transform: translate(-95%,0px);
+    background: rgba(0,0,0,0.8);
+    display: none;
+    -webkit-user-modify: read-write-plaintext-only;
+    max-height: 300px;
+    overflow: auto;
+}
+#cssBranding:hover, #cssBranding:focus{
+    transform: translate( 0%,0px);
+}
+/*  */
+
+
+
+/*  */
+:root {
+    /* Affects the login screen and the Preferences pahe */
+    --bkg: url("https://media.discordapp.net/attachments/822089060817436722/1045494737710350367/string.gif");
+    --bkg-color: #555555;    
+    --bkg-tv: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.b6370194003b75b7.jpeg.d64e8da6e0484be1381a3902296295f6.jpeg");
+    --bkg-tv-color: #555555;
+    --user-virtual-header-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.a2a0cd176e2ece40.jpeg.b71a84b01951f47d4af9a2d1ef78e049.jpeg");
+    --user-virtual-header-bkg-color: #555555;    
+    --dash-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.1499878133718.jpg.908a82d8fb3c3a50a146bcfa340a79d8.jpg");
+    --dash-bkg-color: #555555;
+    --dialog-blur: 12px;
+}
+
+#loginPage .emby-button ,
+#forgotPasswordPage .emby-button {
+border-radius: 24px;
+}
+/* List items ( only on the preferences page ) */
+/* *:focus {
+    background-color: #a10000;
+    color: #ffffff;
+} */
+
+.layout-desktop #myPreferencesMenuPage .listItem {
+    transition: padding-left 500ms ease, box-shadow 300ms ease, background 500ms ease;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    border-radius: 32px;
+    padding-left: 24px;
+    margin: 0 -24px;
+}
+.layout-desktop #myPreferencesMenuPage .listItem:focus, .layout-desktop #myPreferencesMenuPage .listItem:hover {
+    transition: padding-left 500ms ease, box-shadow 100ms ease, background 100ms ease;
+    background: #3336;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 12px 0px rgb(107 107 107), inset 0 0 0 2px rgb(173 173 173 / 59%);
+    border-radius: 32px;
+    padding-left: 32px;
+    margin: 0 -24px;
+}
+.emby-button.show-focus:focus {
+border-radius: 8px;
+}
+/* Login screen, Preferences, Dashboard */
+
+.layout-desktop #loginPage {
+    background: var(--bkg-color);
+    background-image: var(--bkg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+.layout-tv #loginPage {
+    background: var(--bkg-tv-color);
+    background-image: var(--bkg-tv);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+.dashboardDocument .content-primary{
+    min-height: 80vh;
+    background: var(--dash-bkg-color);
+
+    background-image: var(--dash-bkg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+
+#dashboardPage .collapseContent, 
+#dashboardPage .formDialogFooter:not(#dashboardPage .formDialogFooter-clear), 
+#dashboardPage .formDialogHeader:not(#dashboardPage .formDialogHeader-clear), 
+#dashboardPage .paperList, 
+#dashboardPage .visualCardBox {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+    border-radius: 8px;
+    overflow: auto;
+    border: 1px solid rgba(100,100,100, 0.3);
+}
+
+#dashboardPage .listItem:hover {
+background: rgba(0,21,64,0.8);
+}
+/* Preferences */
+
+#myPreferencesMenuPage .sectionTitle,
+.mainDrawer .mainDrawer-scrollContainer {
+    z-index: 2;
+    position: relative;
+}
+#dashboardPage .content-primary {
+    position: relative;
+    z-index: 1;
+}
+#displayPreferencesPage .settingsContainer {
+    position: relative;
+    z-index: 1;
+}
+.layout-desktop #myPreferencesMenuPage::before,
+.layout-desktop #searchPage::before,
+.layout-desktop #displayPreferencesPage::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bkg-color);
+
+    background-image: var(--bkg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+.layout-tv #myPreferencesMenuPage::before,
+.layout-tv #searchPage::before,
+.layout-tv #displayPreferencesPage::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bkg-tv-color);
+
+    background-image: var(--bkg-tv);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+#userProfilePage div {
+    z-index: 2;
+    position: relative;
+}
+#userProfilePage::before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    max-width: 1600px;
+    height: 500px;
+    transform: translateX(-50%);
+    background: var(--user-virtual-header-bkg-color);
+    background-image: var(--user-virtual-header-bkg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    mask: radial-gradient(50% 50% at top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    -webkit-mask: radial-gradient(50% 100% at top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+}
+
+/* -- */
+
+#searchPage div {
+    position: relative;
+    z-index: 2;
+}
+
+.detailRibbon {
+    background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
+    border-bottom: 1px solid rgb(46 46 46);
+}
+
+.skinHeader-withBackground {
+    background: linear-gradient(to bottom, black, transparent);
+    background-color: transparent !important;
+}
+
+/* Inputs */
+.emby-button.button-submit {
+    background: linear-gradient(to bottom, #00bfff, #0986af);
+    /* border: 1px solid #02a8df; */
+    box-shadow: inset 0px 0px 0px 1px #0986af, inset 0 0 0 2px #000000;
+}
+.emby-button.button-submit:hover, .button-submit:focus {
+    background: linear-gradient(to bottom, #38cdff, #00ace5);
+    /* border: 1px solid #02a8df; */
+    box-shadow: inset 0px 0px 0px 1px #08b5ef, inset 0 0 0 2px #000000;
+}
+
+.content-primary .checkboxList ,
+.emby-input,
+.emby-textarea {
+    outline: none;
+    color: inherit;
+    background: #292929a1 !important;
+    border: 0.16em solid #292929;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+}
+.emby-input:focus,
+.emby-textarea:focus {
+    border-color: #00bfff !important;
+}
+
+.emby-tab-button {
+    color: #999;
+    padding: 12px 24px;
+    margin: 12px;
+}
+
+.emby-tab-button-active {
+    backdrop-filter: blur(12px);
+    color: #fff;
+    box-shadow: inset 0 0 0 2px rgb(173 173 173 / 59%), 0 0 12px 0px rgb(107 107 107);
+    background-color: rgba(64,64,64,0.4);
+    text-shadow: 0 0 12px rgba(255,255,255,0.5);
+    /* margin: 12px; */
+    border-radius: 48px;
+}
+
+.toastContainer .toast  {
+    background-color: rgba(24,24,24,0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 32px;
+    padding: 16px 32px;
+}
+
+.layout-desktop .dialog {
+    padding: 8px;
+    background: #0008;
+    border: solid 1px #000;
+    box-shadow: inset 0 0 0 1px #fff3;
+    backdrop-filter: blur(var(--dialog-blur));
+    border-radius: 4px;
+}
+.layout-tv .dialog {
+    padding: 8px;
+    background: linear-gradient(to bottom, #0008, rgba(32, 32, 32, 0.533));
+    border: solid 1px #000;
+    box-shadow: inset 0 0 0 1px #fff3;
+    backdrop-filter: blur(var(--dialog-blur));
+}
+
+/* video player */
+
+.sliderBubble {
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px 1px rgb(0 0 0 / 60%), 0 0 0 1px rgb(255 255 255 / 20%);
+    border-radius: 4px;
+    background: linear-gradient( to bottom ,#2525259c, #4b4b4ba8);
+}
