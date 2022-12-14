@@ -6,7 +6,7 @@
     left: 24px;
     transform: translate(-95%,0px);
     background: rgba(0,0,0,0.8);
-    display: flex;
+    display: none;
     -webkit-user-modify: read-write-plaintext-only;
     max-height: 300px;
     overflow: auto;
