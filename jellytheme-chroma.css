@@ -1,12 +1,12 @@
 #cssBranding{
-    z-index: 10;
+    z-index: 9999;
     transition: transform 200ms ease;
     position: absolute;
     top: 64px;
     left: 24px;
     transform: translate(-95%,0px);
     background: rgba(0,0,0,0.8);
-    display: none;
+    display: flex;
     -webkit-user-modify: read-write-plaintext-only;
     max-height: 300px;
     overflow: auto;
@@ -15,6 +15,42 @@
     transform: translate( 0%,0px);
 }
 /*  */
+
+#cssBranding{
+    z-index: 9999;
+    transition: transform 200ms ease;
+    position: absolute;
+    top: 64px;
+    left: 24px;
+    transform: translate(-95%,0px);
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    -webkit-user-modify: read-write-plaintext-only;
+    max-height: 300px;
+    overflow: auto;
+}
+#cssBranding:hover, #cssBranding:focus{
+    transform: translate( 0%,0px);
+}
+/*  */
+
+
+
+/*  */
+:root {
+    /* Affects the login screen and the Preferences pahe */
+    --bkg: url("https://media.discordapp.net/attachments/822089060817436722/1045494737710350367/string.gif");
+    --bkg-color: #555555;    
+    --bkg-tv: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.b6370194003b75b7.jpeg.d64e8da6e0484be1381a3902296295f6.jpeg");
+    --bkg-tv-color: #555555;
+    --user-virtual-header-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.a2a0cd176e2ece40.jpeg.b71a84b01951f47d4af9a2d1ef78e049.jpeg");
+    --user-virtual-header-bkg-color: #555555;    
+    --dash-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.1499878133718.jpg.908a82d8fb3c3a50a146bcfa340a79d8.jpg");
+    --dash-bkg-color: #555555;
+    --dialog-blur: 12px;
+    --menu-logo: url("https://media.discordapp.net/attachments/822089060817436722/1052639350359343104/1000_F_65118027_7hYshdPKHSDLQo0ZTqjjNRDojhGXyJiv_-_logo_here.png");
+    --menu-logo-height: 64px;
+}
 
 #loginPage .emby-button ,
 #forgotPasswordPage .emby-button {
@@ -92,6 +128,69 @@ border-radius: 8px;
 #dashboardPage .listItem:hover {
 background: rgba(0,21,64,0.8);
 }
+
+/* main drawer */
+
+.layout-desktop .libraryDocument .mainDrawer {
+    margin: 12px;
+    transition: opacity 500ms ease, transform 300ms linear;
+    opacity: 0;
+    padding: 0px;
+    background: #0008;
+    border: solid 1px #000;
+    box-shadow: inset 0 0 0 1px #fff3;
+    backdrop-filter: blur(var(--dialog-blur));
+    border-radius: 8px;
+    padding-top: calc(var( --menu-logo-height ) + 32px);
+}
+.layout-desktop .libraryDocument .mainDrawer::before {
+    z-index: 24;
+    position: absolute;
+    content: "";
+    height: var( --menu-logo-height );
+    width: 100%;
+    top: 24px;
+    background-image: var( --menu-logo );
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.layout-desktop .libraryDocument .mainDrawer.drawer-open {
+    opacity: 1;
+}
+.layout-desktop .libraryDocument .mainDrawer .navMenuOption-selected {
+    background: linear-gradient(45deg, #AA5CC3 , #08A1DB) !important;
+}
+
+/* .tmla-mask */
+
+.layout-desktop .tmla-mask {
+    pointer-events: none;
+    visibility: visible;
+    display: block !important;
+    opacity: 0;
+    transition: all 0.3s ease !important;
+    background-image: var(--bkg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0.347));
+
+    backdrop-filter: blur(12px);
+
+    /* linear gradient mask */
+    /* -webkit-mask-image: linear-gradient(to right, #000000 100px, rgba(0, 0, 0, 0) 100%); */
+}
+.layout-desktop .tmla-mask.backdrop {
+    pointer-events: all;
+    visibility: visible;
+    opacity: 1;
+}
+
+
 /* Preferences */
 
 #myPreferencesMenuPage .sectionTitle,
@@ -199,6 +298,7 @@ background: rgba(0,21,64,0.8);
 .content-primary .checkboxList ,
 .emby-input,
 .emby-textarea {
+    box-shadow: inset 0 1px 3px 0px rgb(0 0 0 / 30%);
     outline: none;
     color: inherit;
     background: #292929a1 !important;
