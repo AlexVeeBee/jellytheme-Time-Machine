@@ -15,28 +15,6 @@
     transform: translate( 0%,0px);
 }
 /*  */
-
-#cssBranding{
-    z-index: 9999;
-    transition: transform 200ms ease;
-    position: absolute;
-    top: 64px;
-    left: 24px;
-    transform: translate(-95%,0px);
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    -webkit-user-modify: read-write-plaintext-only;
-    max-height: 300px;
-    overflow: auto;
-}
-#cssBranding:hover, #cssBranding:focus{
-    transform: translate( 0%,0px);
-}
-/*  */
-
-
-
-/*  */
 :root {
     /* Affects the login screen and the Preferences pahe */
     --bkg: url("https://media.discordapp.net/attachments/822089060817436722/1045494737710350367/string.gif");
