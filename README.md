@@ -14,6 +14,8 @@ A theme for jellyfin
     /* Affects the dashboard */
     --dash-bkg: url("");
     --dash-bkg-color: #555555;
+    --menu-logo: url("");
+    --menu-logo-height: 64px;
     --dialog-blur: 12px;
 }
 ```
