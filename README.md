@@ -1,4 +1,4 @@
-# jellytheme-chroma
+# jellytheme-Time Machine
 A theme for jellyfin
 
 # Defailt Params for the style
