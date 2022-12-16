@@ -336,3 +336,25 @@ background: rgba(0,21,64,0.8);
     border-radius: 4px;
     background: linear-gradient( to bottom ,#2525259c, #4b4b4ba8);
 }
+
+/* music */
+
+.appfooter, .playlistSectionButton {
+    background: none;
+}
+    
+.appfooter .nowPlayingBar { 
+    /* modern colors for the background */
+    background: linear-gradient(to bottom, #000000, #022035b8) !important;
+    backdrop-filter: blur(18px);
+}
+.libraryDocument .nowPlayingInfoContainer {
+    margin-left: 0px;
+}
+.layout-desktop .libraryDocument .nowPlayingInfoControls {
+    background: linear-gradient(to right, #022035b8, transparent 80%) !important;
+    padding-left: 64px;
+}
+.libraryDocument .nowPlayingPageImageContainer {
+    margin-right: 0px;
+}
