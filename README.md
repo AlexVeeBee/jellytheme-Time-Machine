@@ -1,7 +1,7 @@
 # jellytheme-Time Machine
 A theme for jellyfin
 
-# Defailt Params for the style
+# Default Params for the style
 ```css
 :root {
     /* Affects the drawer menu at the top */
