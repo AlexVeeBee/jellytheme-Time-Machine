@@ -1,6 +1,14 @@
 # jellytheme-Time Machine
 A theme for jellyfin
 
+# Import
+Copy and paste this css to the style
+Dashboard > General > Custom CSS
+```css
+@import url("https://raw.githubusercontent.com/AlexVeeBee/jellytheme-Time-Machine/main/jellytheme-chroma.css");
+```
+![opera_eik3nb6bcZ](https://user-images.githubusercontent.com/75509525/233450798-77f706f4-fe26-437b-9f79-09ad9cfac1ca.png)
+
 # Default Params for the style
 ```css
 :root {
