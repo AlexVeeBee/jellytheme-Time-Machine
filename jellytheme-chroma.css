@@ -14,8 +14,39 @@
 #cssBranding:hover, #cssBranding:focus{
     transform: translate( 0%,0px);
 }
-/*  */
 
+* {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/*  */
+body::before {
+    pointer-events: none;
+/*content: "";*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999999999;
+    padding: 8px 4px;
+   /* background: rgba(0,0,0,0.6);*/
+border-bottom: 1px solid rgba(251, 255, 0, 0.8);
+background: linear-gradient(to bottom, black, #fff00859);
+    backdrop-filter: blur(8px);
+    width: -webkit-fill-available;
+    width: -moz-fill-available;
+    width: fill-available;
+    text-align: center;
+    text-shadow: 0 0 8px #000000;
+}
+
+body::before {
+    animation-delay: 30s;
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+} 
 
 /*  */
 :root {
@@ -29,7 +60,7 @@
     --dash-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.1499878133718.jpg.908a82d8fb3c3a50a146bcfa340a79d8.jpg");
     --dash-bkg-color: #555555;
     --dialog-blur: 12px;
-    --menu-logo: url("https://media.discordapp.net/attachments/822089060817436722/1052639350359343104/1000_F_65118027_7hYshdPKHSDLQo0ZTqjjNRDojhGXyJiv_-_logo_here.png");
+    --menu-logo: url("https://jellyfin.avbdns.duckdns.org/jellyfin/web/assets/img/banner-light.png");
     --menu-logo-height: 64px;
 }
 
@@ -72,6 +103,9 @@ border-radius: 8px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: multiply;
+
+    display: flex;
+    justify-content: center;
 }
 .layout-tv #loginPage {
     background: var(--bkg-tv-color);
@@ -258,7 +292,14 @@ background: rgba(0,21,64,0.8);
     background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
     border-bottom: 1px solid rgb(46 46 46);
 }
-
+.detailRibbon::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    width:-webkit-fill-available;
+    background: linear-gradient(to right, transparent, white, transparent);
+    height: 1px;
+}
 .skinHeader-withBackground {
     background: linear-gradient(to bottom, black, transparent);
     background-color: transparent !important;
@@ -439,6 +480,19 @@ background: rgba(0,21,64,0.8);
         inset 0 0 5px 1px rgb(255 255 255 / 20%) !important;
     ;
 }
-.emby-checkbox:checked + span + .checkboxOutline, .itemProgressBarForeground {
+.libraryDocument .emby-checkbox:checked + span + .checkboxOutline,
+.libraryDocument .itemProgressBarForeground {
     background: linear-gradient(to right, #0c3e85, #6a38f4) !important;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page.margin-auto-y {
+    background: #0008;
+    border: solid 1px #000;
+    box-shadow: inset 0 0 0 1px #fff3;
+    backdrop-filter: blur(var(--dialog-blur));
+    border-radius: 4px;
+}
+
+.layout-desktop #loginPage {
+    background-image: url("https://jellyfin.avbdns.duckdns.org/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1");
 }
