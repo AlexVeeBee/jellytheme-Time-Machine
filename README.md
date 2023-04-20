@@ -3,6 +3,7 @@ A theme for jellyfin
 
 # Import
 Copy and paste this css to the style
+
 Dashboard > General > Custom CSS
 ```css
 @import url("https://raw.githubusercontent.com/AlexVeeBee/jellytheme-Time-Machine/main/jellytheme-chroma.css");
