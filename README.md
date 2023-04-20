@@ -28,5 +28,7 @@ Dashboard > General > Custom CSS
     --dash-bkg: url("");
     --dash-bkg-color: #555555;
     --menu-logo: url("");
+    /* Background of the login screen */
+    --login-page-bkg: "";
 }
 ```
