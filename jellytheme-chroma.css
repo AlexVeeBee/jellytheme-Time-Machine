@@ -62,6 +62,7 @@ body::before {
     --dialog-blur: 12px;
     --menu-logo: url("https://jellyfin.avbdns.duckdns.org/jellyfin/web/assets/img/banner-light.png");
     --menu-logo-height: 64px;
+    --login-page-bkg: "";
 }
 
 #loginPage .emby-button ,
@@ -494,5 +495,5 @@ background: rgba(0,21,64,0.8);
 }
 
 .layout-desktop #loginPage {
-    background-image: url("https://jellyfin.avbdns.duckdns.org/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1");
+    background-image: url(var(--login-page-bkg));
 }
