@@ -62,7 +62,7 @@ body::before {
     --dialog-blur: 12px;
     --menu-logo: url("https://jellyfin.avbdns.duckdns.org/jellyfin/web/assets/img/banner-light.png");
     --menu-logo-height: 64px;
-    --login-page-bkg: "";
+    --login-page-bkg: "/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1";
 }
 
 #loginPage .emby-button ,
