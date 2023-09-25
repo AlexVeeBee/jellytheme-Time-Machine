@@ -282,13 +282,13 @@ background: rgba(0,21,64,0.8);
     -webkit-mask: radial-gradient(50% 100% at top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
 
-/* -- */
+/* -- 
 
 #searchPage div {
     position: relative;
     z-index: 2;
 }
-
+*/
 .detailRibbon {
     background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
     border-bottom: 1px solid rgb(46 46 46);
