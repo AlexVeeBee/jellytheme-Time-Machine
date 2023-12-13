@@ -62,7 +62,6 @@ body::before {
     --dialog-blur: 12px;
     --menu-logo: url("https://jellyfin.avbdns.duckdns.org/jellyfin/web/assets/img/banner-light.png");
     --menu-logo-height: 64px;
-    --login-page-bkg: "/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1";
 }
 
 #loginPage .emby-button ,
@@ -77,19 +76,32 @@ border-radius: 24px;
 
 .layout-desktop #myPreferencesMenuPage .listItem {
     transition: padding-left 500ms ease, box-shadow 300ms ease, background 500ms ease;
-    box-shadow: 0 0 0 0 rgba(0,0,0,0);
-    border-radius: 32px;
+    /* box-shadow: 0 0 0 0 rgba(0,0,0,0); */
+    box-shadow: 
+        inset 0 0 0 0px #7e7e7e,
+        inset 0 0 0 0px #252525,
+        0 0px 0px 0px #00000091
+    ;
+    border-radius: 0px;
     padding-left: 24px;
     margin: 0 -24px;
 }
 .layout-desktop #myPreferencesMenuPage .listItem:focus, .layout-desktop #myPreferencesMenuPage .listItem:hover {
+    padding-left: 32px;
+    box-shadow:  
+        inset 0 0 0 1px #7e7e7e,
+        inset 0 0 0 2px #252525,
+        0 4px 8px 1px #00000050
+    ;
+    background: #4b4b4b;
     transition: padding-left 500ms ease, box-shadow 100ms ease, background 100ms ease;
+    
+    /* 
     background: #3336;
     backdrop-filter: blur(8px);
     box-shadow: 0 0 12px 0px rgb(107 107 107), inset 0 0 0 2px rgb(173 173 173 / 59%);
     border-radius: 32px;
-    padding-left: 32px;
-    margin: 0 -24px;
+    margin: 0 -24px; */
 }
 .emby-button.show-focus:focus {
 border-radius: 8px;
@@ -282,29 +294,103 @@ background: rgba(0,21,64,0.8);
     -webkit-mask: radial-gradient(50% 100% at top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
 
-/* -- 
+/* -- */
 
 #searchPage div {
     position: relative;
     z-index: 2;
 }
-*/
-.detailRibbon {
-    background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
-    border-bottom: 1px solid rgb(46 46 46);
-}
-.detailRibbon::after {
-    content:"";
-    position: absolute;
-    bottom: 0;
-    width:-webkit-fill-available;
-    background: linear-gradient(to right, transparent, white, transparent);
-    height: 1px;
-}
 .skinHeader-withBackground {
     background: linear-gradient(to bottom, black, transparent);
     background-color: transparent !important;
 }
+
+/* Movie/Show info */
+.detailRibbon {
+    background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
+    border-bottom: 1px solid rgb(46 46 46);
+}
+.card.portraitCard.card-hoverable.card-withuserdata[data-type="Series"] ,
+.card.portraitCard.card-hoverable.card-withuserdata[data-type="Season"] ,
+.card.portraitCard.card-hoverable.card-withuserdata[data-type="Movie"] {
+    box-shadow: 0 12px 24px 1px rgb(0 0 0 / 60%);
+}
+/* DESKTOP */
+.layout-desktop .detailRibbon::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff32;
+    /* background: linear-gradient(to right, transparent, white, transparent); */
+    height: 1px;
+}
+.layout-desktop .listItem-withContentWrapper {
+    transition: backdrop-filter 500ms ease, box-shadow 300ms ease, background 500ms ease;
+}
+.layout-desktop .listItem-withContentWrapper:hover {
+    background: none;
+}
+.layout-desktop .listItem-withContentWrapper .listItem-content {
+    overflow: hidden;
+    backdrop-filter: blur(0px);
+    box-shadow: 0 0 0 1px #000000, 0 0 0 2px #474747, 0 0 0px 0px rgb(255 255 255 / 20%),
+        inset 0 0px 0px 0px rgb(0 0 0 / 60%);
+    border-radius: 12px;
+    transition: backdrop-filter 500ms ease, box-shadow 300ms ease;
+}
+.layout-desktop .listItem-withContentWrapper .listItem-content::before {
+    content: "";
+    background: linear-gradient(to bottom, #0000004d, #022035b8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    transition: opacity 500ms ease;
+}
+
+.layout-desktop .listItem-withContentWrapper:hover .listItem-content,
+.layout-desktop .listItem-withContentWrapper:focus .listItem-content {
+    box-shadow: 0 0 0 1px #000000, 0 0 0 2px #474747, 0 0 5px 1px rgb(255 255 255 / 20%),
+        inset 0 12px 24px 1px rgb(0 0 0 / 60%);
+}
+.layout-desktop .listItem-withContentWrapper:hover .listItem-content::before {
+    opacity: 1;
+}
+.layout-desktop .listItem-withContentWrapper .listItem-content .listItemImage {
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+    margin: 12px;
+}
+/* TV */
+.layout-tv .itemsContainer-tv .listItem {
+    transition: transform 300ms ease, backdrop-filter 500ms ease, box-shadow 300ms ease, background 500ms ease;
+    box-shadow: 0 0 0 0px #000000, 0 0 0 0px #474747, 0 0 0px 0px rgb(255 255 255 / 20%),
+        inset 0 0px 0px 0px rgb(0 0 0 / 60%);
+}
+.layout-tv .itemsContainer-tv .listItem:focus {
+    background: none;
+    box-shadow: 0 0 0 1px #000000, 0 0 0 2px #474747, 0 0 0px 0px rgb(255 255 255 / 20%),
+        inset 0 0px 0px 0px rgb(0 0 0 / 60%);
+}
+.layout-tv .itemsContainer-tv .listItem::before {
+    content: "";
+    background: radial-gradient(circle at 0% 49%, #022035b8 50%, #0000004d);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    transition: opacity 500ms ease;
+}
+.layout-tv .itemsContainer-tv .listItem:focus::before {
+    opacity: 1;
+}
+
 
 /* Inputs */
 .emby-button.button-submit {
@@ -495,5 +581,34 @@ background: rgba(0,21,64,0.8);
 }
 
 .layout-desktop #loginPage {
-    background-image: url(var(--login-page-bkg));
+    background-image: url("https://jellyfin.avbdns.duckdns.org/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1");
 }
+/* div#nowPlayingPage {
+    transition: opacity 0.5s ease-in-out;
+}
+.mouseIdle div#nowPlayingPage {
+    opacity: 0.5;
+}
+div#nowPlayingPage .nowPlayingButtonsContainer {
+    transition: opacity 0.5s ease-in-out;
+}
+.mouseIdle.libraryDocument .nowPlayingInfoControls {
+    background: none !important;
+}
+.mouseIdle div#nowPlayingPage .nowPlayingButtonsContainer {
+    opacity: 0;
+    animation: hideControls 5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes hideControls {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: -100px;
+    }
+} */
