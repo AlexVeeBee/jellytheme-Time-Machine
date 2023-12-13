@@ -310,11 +310,7 @@ background: rgba(0,21,64,0.8);
     background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
     border-bottom: 1px solid rgb(46 46 46);
 }
-.card.portraitCard.card-hoverable.card-withuserdata[data-type="Series"] ,
-.card.portraitCard.card-hoverable.card-withuserdata[data-type="Season"] ,
-.card.portraitCard.card-hoverable.card-withuserdata[data-type="Movie"] {
-    box-shadow: 0 12px 24px 1px rgb(0 0 0 / 60%);
-}
+
 /* DESKTOP */
 .layout-desktop .detailRibbon::after {
     content:"";
