@@ -60,7 +60,7 @@ body::before {
     --dash-bkg: url("https://forum.itgoit.nl/uploads/monthly_2022_11/large.1499878133718.jpg.908a82d8fb3c3a50a146bcfa340a79d8.jpg");
     --dash-bkg-color: #555555;
     --dialog-blur: 12px;
-    --menu-logo: url("https://jellyfin.avbdns.duckdns.org/jellyfin/web/assets/img/banner-light.png");
+    --menu-logo: url("/jellyfin/web/assets/img/banner-light.png");
     --menu-logo-height: 64px;
 }
 
