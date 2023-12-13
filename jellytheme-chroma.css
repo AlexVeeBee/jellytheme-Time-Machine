@@ -581,7 +581,7 @@ background: rgba(0,21,64,0.8);
 }
 
 .layout-desktop #loginPage {
-    background-image: url("https://jellyfin.avbdns.duckdns.org/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1");
+    background-image: url("/jellyfin/Branding/Splashscreen?format=jpg&foregroundLayer=1");
 }
 /* div#nowPlayingPage {
     transition: opacity 0.5s ease-in-out;
