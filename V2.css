@@ -1,0 +1,84 @@
+:root {
+    --normal-header-bkg-color: #000000;
+    --normal-header-transprent-bkg-color: rgba(0, 0, 0, 0);
+}
+
+/* HEADER */
+.skinHeader-withBackground {
+    background-color: transparent;
+    background: linear-gradient(to bottom, black, transparent) !important;
+}
+/* MOVIE */
+
+.detailRibbon {
+    background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
+    border-bottom: 1px solid rgb(46 46 46);
+    box-shadow: 0 12px 12px -12px rgb(0 0 0 / 50%);
+}
+.layout-desktop .detailRibbon::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top,#ffffff32,#ffffff00);
+    /* background: linear-gradient(to right, transparent, white, transparent); */
+    height: 3px;
+}
+
+/* MEDIA PLAYER */
+
+/* BOTTOM */
+.videoOsdBottom-maincontrols {
+    background-color: transparent;
+    background: transparent !important;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    padding-top: 8px;
+}
+.videoOsdBottom-maincontrols::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgb(0 0 0 / 80%);
+    border-top: 1px solid rgb(46 46 46);
+    box-shadow: 0 -12px 12px -12px rgb(0 0 0 / 50%);
+    transition: transform 0.3s ease-in-out;
+}
+.videoOsdBottom-maincontrols.videoOsdBottom-hidden::before {
+    transform: translateY(100%);
+}
+/* TOP */
+.skinHeader-withBackground.osdHeader {
+    background-color: transparent;
+    background: transparent !important;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    overflow: visible !important;
+}
+.skinHeader-withBackground.osdHeader.osdHeader-hidden {
+    transition: opacity 0.5s ease-in-out;
+}
+.skinHeader-withBackground.osdHeader::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgb(0 0 0 / 80%) !important;
+    border-bottom: 1px solid rgb(46 46 46);
+    box-shadow: 0 12px 12px -12px rgb(0 0 0 / 50%);
+    transition: transform 0.3s ease-in-out;
+}
+.skinHeader-withBackground.osdHeader.osdHeader-hidden::before {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+}
